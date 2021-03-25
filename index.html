@@ -13,13 +13,31 @@
       <div class="container">
         <h1>TO DO LIST</h1>
         <ul class="toDos">
-          <li>
-            <span class="title"></span>
-            <span class="controls check"><i class="fas fa-check-circle"></i></span>
-            <span class="controls edit"><i class="fas fa-pen-square"></i></span>
+          <li v-for="(todo, i) in todosComputed">
+            <span class="title" :class="(todo.status == 'done') ? 'barrato' : '' ">
+              {{ todo.title }}
+            </span>
+            <span 
+              v-if="todo.status != 'done'" 
+              class="controls check"
+              @click="check(todo)">
+              <i class="fas fa-check-circle"></i>
+            </span>
+
+            <span v-if="todo.status != 'done'" class="controls edit"><i class="fas fa-pen-square"></i></span>
+            <span 
+              v-if="todo.status == 'done'" 
+              class="controls delete"
+              @click="remove">
+              <i class="fas fa-trash"></i>
+            </span>
           </li>
         </ul>
-        <input class="insert" type="text" placeholder="Inserisci qui i tuoi impegni">
+        <input v-model="inputTxt" 
+          class="insert" 
+          type="text" 
+          placeholder="Inserisci qui i tuoi impegni"
+          @keyup.enter="add">
 
 
       </div>
