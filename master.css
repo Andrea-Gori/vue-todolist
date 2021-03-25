@@ -1,0 +1,49 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #6495e6;
+  width: 600px;
+  padding: 15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul.toDos {
+  list-style: none;
+}
+
+ul.toDos li::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+ul.toDos li .controls {
+  float: right;
+  padding: 0 5px;
+}
+
+.insert {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.title.barrato {
+  text-decoration: line-through;
+}
