@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+body {
+  background-image: radial-gradient(circle, #9b243e, #a93538, #b44731, #bc5929, #c06d21);
+}
+
 #root {
   width: 100vw;
   height: 100vh;
